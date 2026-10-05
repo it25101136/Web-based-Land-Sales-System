@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Member 4: Customer Management & Inquiry Handling Styles
+   ========================================================================== */
+
+.customer-crm-container {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.table-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#crm-search {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  width: 320px;
+  font-size: 13.5px;
+}
+
+.crm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.crm-table th, .crm-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 13.5px;
+}
+
+.crm-table th {
+  background: #F8FAFC;
+  color: #475569;
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: uppercase;
+}
+
+/* Inquiry Thread Card */
+.inquiry-thread-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+.inquiry-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.inquiry-badge.pending { background: #FEF3C7; color: #B45309; }
+.inquiry-badge.resolved { background: #DCFCE7; color: #15803D; }
+
+.inquiry-content-box {
+  background: #F8FAFC;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 16px 0;
+  border-left: 4px solid #0E8F63;
+}
+
+.thread-replies {
+  margin: 24px 0;
+}
+
+.reply-bubble {
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.reply-bubble.staff {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  margin-left: 32px;
+}
+
+.reply-bubble.customer {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  margin-right: 32px;
+}
+
+.reply-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748B;
+  margin-bottom: 6px;
+}
+
+/* Chatbot Floating Widget */
+.chatbot-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+
+.chatbot-trigger {
+  background: linear-gradient(135deg, #0E8F63, #0B2545);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(14, 143, 99, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.chatbot-trigger:hover {
+  transform: translateY(-2px);
+}
+
+.chatbot-box {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 360px;
+  height: 480px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+}
+
+.chatbot-header {
+  background: #0B2545;
+  color: #ffffff;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bot-msg {
+  background: #EEF2F6;
+  padding: 10px 14px;
+  border-radius: 12px 12px 12px 2px;
+  font-size: 13.5px;
+  color: #0F172A;
+  max-width: 85%;
+}
+
+.user-msg {
+  background: #0E8F63;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 12px 12px 2px 12px;
+  font-size: 13.5px;
+  align-self: flex-end;
+  max-width: 85%;
+}
+
+.chat-input-bar {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #E2E8F0;
+  background: #F8FAFC;
+}
+
+.chat-input-bar input {
+  flex: 1;
+  border: 1px solid #CBD5E1;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.btn-send {
+  background: #0E8F63;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  margin-left: 8px;
+  cursor: pointer;
+}
