@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/member-1-user-authentication-profile-management.iml" filepath="$PROJECT_DIR$/.idea/member-1-user-authentication-profile-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/member-2-land-management-search.iml" filepath="$PROJECT_DIR$/.idea/member-2-land-management-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/member-3-reservation-sales-management.iml" filepath="$PROJECT_DIR$/.idea/member-3-reservation-sales-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/member-4-customer-management-inquiry-handling.iml" filepath="$PROJECT_DIR$/.idea/member-4-customer-management-inquiry-handling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/member-5-payment-finance-management.iml" filepath="$PROJECT_DIR$/.idea/member-5-payment-finance-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/member-6-admin-dashboard-reports-notifications.iml" filepath="$PROJECT_DIR$/.idea/member-6-admin-dashboard-reports-notifications.iml" />
+    </modules>
+  </component>
+</project>
