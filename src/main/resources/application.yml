@@ -1,0 +1,35 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:sqlserver://localhost:1433;databaseName=landhub_lk;encrypt=false;trustServerCertificate=true}
+    username: ${DB_USERNAME:landhub}
+    password: ${DB_PASSWORD:Landhub@2026}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: false
+    open-in-view: false
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+app:
+  jwt-secret: ${JWT_SECRET:landhub-sl-dev-secret-change-in-production}
+  jwt-expiration-ms: ${JWT_EXPIRATION_MS:28800000}
+  bcrypt-rounds: ${BCRYPT_ROUNDS:10}
+  currency: LKR
+  default-lang: en
+  upload-dir: ${UPLOAD_DIR:./uploads}
+
+logging:
+  level:
+    com.landhub: INFO
+    org.hibernate.SQL: WARN

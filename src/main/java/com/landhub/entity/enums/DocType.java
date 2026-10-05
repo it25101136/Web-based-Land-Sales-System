@@ -1,0 +1,5 @@
+package com.landhub.entity.enums;
+
+public enum DocType {
+    DEED, TITLE_CERTIFICATE, SURVEY_PLAN, LAND_REGISTRY, OWNERSHIP, OTHER_LEGAL
+}
