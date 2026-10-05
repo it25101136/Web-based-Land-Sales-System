@@ -1,0 +1,233 @@
+/* ==========================================================================
+   Member 6: Admin Dashboard, Reports & Notifications Styles
+   ========================================================================== */
+
+.admin-dashboard-wrap {
+  padding: 32px 0;
+}
+
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.admin-topbar h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0B2545;
+}
+
+.admin-topbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.04);
+}
+
+.kpi-icon {
+  font-size: 32px;
+  background: #EEF2F6;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.kpi-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0B2545;
+  margin: 4px 0 2px;
+}
+
+.kpi-trend {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.kpi-trend.positive { color: #10B981; }
+.kpi-trend.warning { color: #F59E0B; }
+
+/* SVG Charts */
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.chart-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0B2545;
+  margin-bottom: 16px;
+}
+
+.chart-svg-wrap {
+  width: 100%;
+  height: 220px;
+}
+
+.svg-bar-chart, .svg-hbar-chart {
+  width: 100%;
+  height: 100%;
+}
+
+/* Document Verification Queue */
+.doc-queue-container {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.doc-queue-container h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0B2545;
+  margin-bottom: 6px;
+}
+
+.doc-queue-container p {
+  font-size: 13.5px;
+  color: #64748B;
+  margin-bottom: 18px;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doc-table th, .doc-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 13.5px;
+}
+
+.doc-type-badge {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Notification Bell Dropdown */
+.notification-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.bell-btn {
+  background: none;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+}
+
+.badge-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #EF4444;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.notif-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 340px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #E2E8F0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.notif-item {
+  padding: 12px 18px;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 13px;
+}
+
+.notif-item.unread {
+  background: #F0FDF4;
+}
+
+.notif-title {
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 2px;
+}
+
+.notif-body {
+  color: #475569;
+  font-size: 12px;
+}
+
+.notif-time {
+  font-size: 11px;
+  color: #94A3B8;
+  margin-top: 4px;
+}
