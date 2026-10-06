@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Member 5: Payment & Finance Management Styles
+   ========================================================================== */
+
+.payment-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 37, 69, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.payment-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  box-shadow: 0 25px 60px rgba(11, 37, 69, 0.25);
+}
+
+.payment-header h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0B2545;
+  margin-bottom: 4px;
+}
+
+.payment-header p {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 20px;
+}
+
+.invoice-summary-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.summary-line.total-line {
+  border-top: 1px dashed #CBD5E1;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0E8F63;
+}
+
+.payment-method-radios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F1F5F9;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.2s;
+}
+
+.radio-label:has(input:checked) {
+  border-color: #0E8F63;
+  background: #E6F5EF;
+  color: #0E8F63;
+}
+
+.card-details-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+/* Payments Table */
+.payments-container {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table th, .payments-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 13.5px;
+}
+
+.payments-table th {
+  background: #F8FAFC;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.amount-cell {
+  font-weight: 800;
+  color: #0E8F63;
+}
+
+.method-tag {
+  background: #EEF2F6;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}

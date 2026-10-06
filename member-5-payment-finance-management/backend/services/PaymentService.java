@@ -1,9 +1,9 @@
-package com.landhub.service;
+﻿package services;
 
-import com.landhub.entity.*;
-import com.landhub.entity.enums.*;
+import models.*;
+import models.*;
 import com.landhub.exception.ApiException;
-import com.landhub.repository.*;
+import data.*;
 import com.landhub.util.MoneyUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -89,21 +89,6 @@ public class PaymentService {
         return paymentToMap(p);
     }
 
-    @Transactional
-    public Map<String, Object> delete(Long id, String role) {
-        if (!"ADMIN".equals(role))
-            throw ApiException.forbidden("Only admins can delete payments");
-
-        Payment p = paymentRepo.findById(id)
-                .orElseThrow(() -> ApiException.notFound("Payment not found"));
-
-        if (p.getStatus() == PaymentStatus.SUCCESSFUL)
-            throw ApiException.forbidden("Successful payments cannot be deleted. Refund or cancel it first.");
-
-        paymentRepo.delete(p);
-        return Map.of("deleted", true, "id", id);
-    }
-
     public Payment getById(Long id) {
         return paymentRepo.findById(id).orElseThrow(() -> ApiException.notFound("Payment not found"));
     }
@@ -134,3 +119,4 @@ public class PaymentService {
     private static long toLong(Object v) { if (v == null) return 0; if (v instanceof Number n) return n.longValue(); try { return Long.parseLong(v.toString()); } catch (Exception e) { return 0; } }
     private static double toDouble(Object v) { if (v == null) return 0; if (v instanceof Number n) return n.doubleValue(); try { return Double.parseDouble(v.toString()); } catch (Exception e) { return 0; } }
 }
+
