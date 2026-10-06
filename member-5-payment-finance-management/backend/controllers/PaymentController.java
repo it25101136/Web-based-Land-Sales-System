@@ -1,8 +1,8 @@
-package com.landhub.controller;
+﻿package controllers;
 
 import com.landhub.security.UserPrincipal;
-import com.landhub.service.PaymentService;
-import com.landhub.service.PdfService;
+import services.PaymentService;
+import services.PdfService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -55,16 +55,5 @@ public class PaymentController {
             @RequestBody Map<String, Object> body) {
         return ResponseEntity.ok(paymentService.updateStatus(id, principal.getId(), (String) body.get("status")));
     }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> delete(
-            @PathVariable Long id,
-            @AuthenticationPrincipal UserPrincipal principal) {
-        return ResponseEntity.ok(paymentService.delete(id, principal.getRole()));
-    }
-
 }
-
-
-
 

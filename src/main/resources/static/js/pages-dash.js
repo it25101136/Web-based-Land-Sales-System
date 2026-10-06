@@ -446,12 +446,30 @@ Pages.payments = async function (host) {
           <td><b>${fmt.lkr(p.amount)}</b></td><td>${UI.pill(p.status)}</td><td>${fmt.date(p.created_at)}</td>
           <td><a class="btn btn-ghost btn-sm" href="/api/payments/${p.id}/invoice?token=${encodeURIComponent(API.token)}" target="_blank">⬇ PDF</a></td>
           ${State.user.role === 'ADMIN' ? `<td><select class="ctrl" data-ps="${p.id}" style="padding:6px;font-size:12px">
-            ${['PENDING', 'SUCCESSFUL', 'FAILED', 'REFUNDED'].map(s => `<option ${p.status === s ? 'selected' : ''}>${s}</option>`).join('')}</select></td>` : ''}
+                      ${['PENDING', 'SUCCESSFUL', 'FAILED', 'REFUNDED'].map(s => `<option ${p.status === s ? 'selected' : ''}>${s}</option>`).join('')}</select>
+          ${p.status !== 'SUCCESSFUL' ? `<button class="btn btn-ghost btn-sm" data-pdel="${p.id}" style="margin-left:6px;color:#c0392b">🗑 Delete</button>` : ''}</td>` : ''}
         </tr>`).join('')}</tbody></table></div>`
-        : UI.empty('💳', 'No payments yet', 'Approved reservations can be settled through the sandbox payment module.')}`;
+    : UI.empty('💳', 'No payments yet', 'Approved reservations can be settled through the sandbox payment module.')}`;
     el.querySelectorAll('[data-ps]').forEach(s => s.onchange = async () => {
-      try { await API.put(`/api/payments/${s.dataset.ps}/status`, { status: s.value }); UI.toast('Payment status updated'); } catch (e) { UI.err(e); }
+      try { await API.put(`/api/payments/${s.dataset.ps}/status`, { status: s.value }); UI.toast('Payment status updated');  Pages.payments(host); } catch (e) { UI.err(e); }
     });
+
+    el.querySelectorAll('[data-pdel]').forEach(b => b.onclick = async () => {
+      if (!confirm('Delete this payment permanently? This cannot be undone.')) return;
+      try {
+        const res = await fetch('/api/payments/' + b.dataset.pdel, {
+          method: 'DELETE',
+          headers: { 'Authorization': 'Bearer ' + API.token }
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body.message || body.error || 'Delete failed');
+        }
+        UI.toast('Payment deleted');
+        Pages.payments(host);
+      } catch (e) { UI.err(e); }
+    });
+
   } catch (e) { UI.err(e); }
 };
 
